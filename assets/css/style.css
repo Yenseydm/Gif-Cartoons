@@ -1,0 +1,51 @@
+
+body{
+    background-color: rgb(255, 0, 234);
+    background-image: url("../images/tv.png");
+}
+
+.container{
+    text-align: center;
+    margin-right: 350px;
+    margin-top: 150px;
+}
+
+h1{
+    font-size: 80px;
+    color: rgb(0, 247, 255);
+    font-family: 'Barriecito', cursive;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+}
+
+#buttons-view{
+    
+    
+    font-family: 'Just Me Again Down Here', cursive;
+}
+
+#cartoon-form {
+    font-size: 40px;
+    font-family: 'Amatic SC', cursive;
+}
+
+#cartoon-input {
+    font-size: 20px;
+    font-family: 'Amatic SC', cursive;
+    width: 300px;
+    border-radius: 25px;
+}
+
+#add-cartoon{
+    border-radius: 25px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.gif-btn {
+    border-radius: 25px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
+    margin-right: 10px;
+}
