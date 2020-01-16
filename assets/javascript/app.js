@@ -26,7 +26,7 @@ function displayGifs() {
     
     function Buttons(){
 
-        $("#cartoon-view").empty();
+        $("#buttons-view").empty();
 
         for (var i = 0; i < topics.length; i++) {
 
@@ -34,19 +34,22 @@ function displayGifs() {
             press.addClass("gif-btn");
             press.attr("data-gif", topics[i]);
             press.text(topics[i]);
-            $("#cartoon-view").append(press);
+            $("#buttons-view").append(press);
 
         }
 
     }
 
-    $("#add-gif").on("click", function(event){
+    $("#add-cartoon").on("click", function(event){
         event.preventDefault();
 
-        var giphy = $("#gif-input").val().trim();
+        var giphy = $("#cartoon-input").val().trim();
 
         topics.push(giphy);
 
         Buttons();
     });
-    
+
+    $(document).on("click", ".gif-btn", displayGifs);
+
+    Buttons();
