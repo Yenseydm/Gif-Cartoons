@@ -10,22 +10,23 @@ function displayGifs() {
         method: "GET"
     }).then(function(response){
 
-        var gifDiv = $("<div class='movie'>");
+        // var gifDiv = $("<div class='movie'>");
 
-        var rating = response.Rated;
+        // var rating = response.Rated;
 
-        var pOne = $("<p>").text("rating: " + rating);
+        // var pOne = $("<p>").text("rating: " + rating);
 
-        gifDiv.append(pOne);
+        // gifDiv.append(pOne);
 
-        var gifURL = response. ;
+        // var gifURL = response. ;
 
-        var 
+        // var 
     })
-
+}
+    
     function Buttons(){
 
-        $("#buttons-view").empty();
+        $("#cartoon-view").empty();
 
         for (var i = 0; i < topics.length; i++) {
 
@@ -39,5 +40,13 @@ function displayGifs() {
 
     }
 
+    $("#add-gif").on("click", function(event){
+        event.preventDefault();
 
-}
+        var giphy = $("#gif-input").val().trim();
+
+        topics.push(giphy);
+
+        Buttons();
+    });
+    
