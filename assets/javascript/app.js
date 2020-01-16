@@ -3,7 +3,7 @@ var topics=["Scooby Doo", "Popeye", "Spongebob", "Betty Boop", "Gumby", "Tweety"
 function displayGifs() {
 
     var gifs = $(this).attr("data-gif");
-    var queryURL = "" + gifs + "";
+    var queryURL = "api.giphy.com/v1/gifs/search" + gifs + "Cf5v2mEBad0sucE5TLOhif9B3iuSseU2";
 
     $.ajax({
         url: queryURL,
@@ -22,5 +22,22 @@ function displayGifs() {
 
         var 
     })
+
+    function Buttons(){
+
+        $("#buttons-view").empty();
+
+        for (var i = 0; i < topics.length; i++) {
+
+            var press = $("<button>");
+            press.addClass("gif-btn");
+            press.attr("data-gif", topics[i]);
+            press.text(topics[i]);
+            $("#cartoon-view").append(press);
+
+        }
+
+    }
+
 
 }
