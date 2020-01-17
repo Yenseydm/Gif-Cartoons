@@ -3,7 +3,8 @@ var topics=["Scooby Doo", "Popeye", "Spongebob", "Betty Boop", "Gumby", "Tweety"
 function displayGifs() {
    
     var gifs = $(this).attr("data-gif");
-    var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=Cf5v2mEBad0sucE5TLOhif9B3iuSseU2&q=" + gifs + "&limit=10";
+    console.log(gifs);
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=Cf5v2mEBad0sucE5TLOhif9B3iuSseU2&limit=10&q?" + gifs;
     
     $.ajax({
         url: queryURL,
@@ -11,15 +12,16 @@ function displayGifs() {
 
     }).then(function(response){
         console.log(response);
+
         var gifDiv = $("<div class='giftoons'>");
 
-        var rated = response.data.rating;
+        var rated = response.data[i].rating;
 
         var pOne = $("<p>").text("Rating: " + rated);
 
         gifDiv.append(pOne);
 
-        var gifURL = response.data.url;
+        var gifURL = response.data[i].images;
 
         var giphyOne = $("<img>").attr("src", gifURL);
 
