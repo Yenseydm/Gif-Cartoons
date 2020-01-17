@@ -14,13 +14,11 @@ h1{
     font-size: 80px;
     color: rgb(0, 247, 255);
     font-family: 'Barriecito', cursive;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
 
 }
 
 #buttons-view{
-    
-    
     font-family: 'Just Me Again Down Here', cursive;
 }
 

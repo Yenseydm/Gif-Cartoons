@@ -1,29 +1,36 @@
 var topics=["Scooby Doo", "Popeye", "Spongebob", "Betty Boop", "Gumby", "Tweety", "Courage the Cowardly dog"];
 
 function displayGifs() {
-
+   
     var gifs = $(this).attr("data-gif");
-    var queryURL = "api.giphy.com/v1/gifs/search" + gifs + "Cf5v2mEBad0sucE5TLOhif9B3iuSseU2";
-
+    var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=Cf5v2mEBad0sucE5TLOhif9B3iuSseU2&q=" + gifs + "&limit=10";
+    
     $.ajax({
         url: queryURL,
         method: "GET"
+
     }).then(function(response){
+        console.log(response);
+        var gifDiv = $("<div class='giftoons'>");
 
-        // var gifDiv = $("<div class='movie'>");
+        var rated = response.data.rating;
 
-        // var rating = response.Rated;
+        var pOne = $("<p>").text("Rating: " + rated);
 
-        // var pOne = $("<p>").text("rating: " + rating);
+        gifDiv.append(pOne);
 
-        // gifDiv.append(pOne);
+        var gifURL = response.data.url;
 
-        // var gifURL = response. ;
+        var giphyOne = $("<img>").attr("src", gifURL);
 
-        // var 
-    })
+        gifDiv.append(giphyOne);
+
+        $("#cartoon-view").html(gifDiv);
+        
+        
+    }) 
 }
-    
+
     function Buttons(){
 
         $("#buttons-view").empty();
